@@ -1,7 +1,7 @@
 {
     "name": "htmlentity-replacer",
     "displayName": "htmlentity-replacer",
-    "description": "",
+    "description": "VSCode extension for quick replacements of accented characters into html entities.",
     "version": "0.1.0",
     "publisher": "enriquein",
     "engines": {
@@ -23,8 +23,7 @@
         ]
     },
     "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
+        "postinstall": "node ./node_modules/vscode/bin/install"
     },
     "devDependencies": {
         "typescript": "^2.6.1",
@@ -35,5 +34,9 @@
     },
     "dependencies": {
         "lodash": "^4.17.11"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/enriquein/htmlentity-replacer"
     }
 }

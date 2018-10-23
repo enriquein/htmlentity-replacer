@@ -22,6 +22,8 @@ This extension adds a command to Visual Studio Code to replace some special char
 - &uuml;
 - &Uuml;
 
+The command will appear in your command palette as `Replace with Html entity`.
+
 ## Requirements
 
 Requires a recent version of Visual Studio Code running on NodeJS 7+
