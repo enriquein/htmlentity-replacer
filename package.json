@@ -3,7 +3,7 @@
     "displayName": "htmlentity-replacer",
     "description": "",
     "version": "0.1.0",
-    "publisher": "riq",
+    "publisher": "enriquein",
     "engines": {
         "vscode": "^1.28.0"
     },
