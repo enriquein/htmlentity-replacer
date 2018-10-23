@@ -1,0 +1,39 @@
+{
+    "name": "htmlentity-replacer",
+    "displayName": "htmlentity-replacer",
+    "description": "",
+    "version": "0.1.0",
+    "publisher": "riq",
+    "engines": {
+        "vscode": "^1.28.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.htmlentity-replacer"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.htmlentity-replacer",
+                "title": "Replace with Html entity"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.21",
+        "eslint": "^4.11.0",
+        "@types/node": "^8.10.25",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "lodash": "^4.17.11"
+    }
+}
