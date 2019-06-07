@@ -1,5 +1,5 @@
 const vscode = require('vscode');
-const _ = require('lodash');
+const _ = require('lodash.forin');
 
 const charMap = {
     'Á':'&Aacute;',
@@ -29,7 +29,7 @@ const charMap = {
     'ĉ':'&#265;',
     'Ċ':'&#266;',
     'ċ':'&#267;',
-    'Č':'&#268;', 
+    'Č':'&#268;',
     'č':'&#269;',
     'Ď':'&#270;',
     'ď':'&#271;',
@@ -176,7 +176,7 @@ const charMap = {
     'Ź':'&Zacute;',
     'ź':'&zacute;',
     'Ż':'&Zdot;',
-    'ż':'&zdot;',	
+    'ż':'&zdot;',
     'Ž':'&Zcaron;',
     'ž':'&zcaron;',
     'Ç':'&Ccedil;',
@@ -194,7 +194,7 @@ const charMap = {
     'þ':'&thorn;',
     'ß':'&szlig;',
     '£':'&pound;',
-    '¥':'&yen;', 
+    '¥':'&yen;',
     '€':'&euro;',
     '¿':'&iquest;',
     '¡':'&iexcl;',
