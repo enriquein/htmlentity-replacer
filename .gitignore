@@ -3,3 +3,4 @@ node_modules
 *.vsix
 .cache
 package-lock.json
+/dist
