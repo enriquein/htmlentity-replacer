@@ -1,5 +1,5 @@
 const vscode = require('vscode');
-const _ = require('lodash.forin');
+const forIn = require('lodash.forin');
 
 const charMap = {
     'Á':'&Aacute;',
@@ -202,7 +202,7 @@ const charMap = {
 
 // build match regex based on charmap
 let regexMap = '[';
-_.forIn(charMap, (value, key) => { regexMap += key; });
+forIn(charMap, (value, key) => { regexMap += key; });
 regexMap += "]";
 
 function activate(context) {
