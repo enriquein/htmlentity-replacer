@@ -198,6 +198,9 @@ const charMap = {
     '€':'&euro;',
     '¿':'&iquest;',
     '¡':'&iexcl;',
+    '™':'&trade;', 
+    '℠':'&#8480;', 
+    '&':'&amp;',
 };
 
 // build match regex based on charmap

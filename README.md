@@ -206,6 +206,9 @@ This extension adds a command to Visual Studio Code to replace some special char
 - &euro; -> `&euro;`
 - &iquest; -> `&iquest;`
 - &iexcl; -> `&iexcl;`
+- &trade; -> `&trade;`
+- &#8480; -> `&#8480;`
+- &amp; -> `&amp;`
 
 The idea behind this extension (and the reason why it won't replace any of the other HTML entities) is that if you have a file that contains the listed characters you can replace all of these at once just by running the command. This is very useful if you are working with localizable strings, and your source contains these special characters.
 
