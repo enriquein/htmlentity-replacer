@@ -37,7 +37,7 @@ This extension adds a command to Visual Studio Code to replace some special char
 - &#265; -> `&#265;`
 - &#266; -> `&#266;`
 - &#267; -> `&#267;`
-- &#268; -> `&#268;` 
+- &#268; -> `&#268;`
 - &#269; -> `&#269;`
 - &#270; -> `&#270;`
 - &#271; -> `&#271;`
@@ -184,7 +184,7 @@ This extension adds a command to Visual Studio Code to replace some special char
 - &#377; -> `&#377;`
 - &#378; -> `&#378;`
 - &#379; -> `&#379;`
-- &#380; -> `&#380;`	
+- &#380; -> `&#380;`
 - &#381; -> `&#381;`
 - &#382; -> `&#382;`
 - &Ccedil; -> `&Ccedil;`
@@ -202,13 +202,12 @@ This extension adds a command to Visual Studio Code to replace some special char
 - &thorn; -> `&thorn;`
 - &szlig; -> `&szlig;`
 - &pound; -> `&pound;`
-- &yen; -> `&yen;` 
+- &yen; -> `&yen;`
 - &euro; -> `&euro;`
 - &iquest; -> `&iquest;`
 - &iexcl; -> `&iexcl;`
 - &trade; -> `&trade;`
 - &#8480; -> `&#8480;`
-- &amp; -> `&amp;`
 
 The idea behind this extension (and the reason why it won't replace any of the other HTML entities) is that if you have a file that contains the listed characters you can replace all of these at once just by running the command. This is very useful if you are working with localizable strings, and your source contains these special characters.
 
