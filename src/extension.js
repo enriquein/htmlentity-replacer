@@ -203,7 +203,10 @@ const charMap = {
     '¿':'&iquest;',
     '¡':'&iexcl;',
     '™':'&trade;',
-    '℠':'&#8480;'
+    '℠':'&#8480;',
+    '°':'&deg;',
+    'º':'&ordm;',
+    'ª':'&ordf;'
 };
 
 // build match regex based on charmap
