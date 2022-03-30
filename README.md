@@ -1,218 +1,58 @@
 # HTML accented character converter
 
-VSCode extension for quick replacements of accented characters into html entities.
+VSCode extension for quick replacements of accented characters into html entities. Useful if you are working with localizable strings that contain special characters
+and you wish to replace them with their corresponding HTML entities.
 
-Originally named htmlentity-replacer because I'm pretty bad at naming things.
+## Demo
 
 ![Demo](https://github.com/enriquein/htmlentity-replacer/raw/master/demo.gif)
 
 ## Features
 
-This extension adds a command to Visual Studio Code to replace some special characters into html entities. The command will appear in your command palette as `Replace special characters with Html entities`. The list of supported characters is:
+This extension adds a command to Visual Studio Code to replace special characters into html entities. The command will appear in your Command Palette as `Replace special characters with Html entities`. It includes 204 common special character replacements. For example, here's a partial list of some of them:
 
 - &Aacute; -> `&Aacute;`
-- &aacute; -> `&aacute;`
-- &Acirc; -> `&Acirc;`
-- &acirc; -> `&acirc;`
-- &Agrave; -> `&Agrave;`
-- &agrave; -> `&agrave;`
-- &Aring; -> `&Aring;`
-- &aring; -> `&aring;`
-- &Atilde; -> `&Atilde;`
-- &atilde; -> `&atilde;`
-- &Auml; -> `&Auml;`
-- &auml; -> `&auml;`
-- &#258; -> `&#258;`
-- &#259; -> `&#259;`
-- &#260; -> `&#260;`
-- &#261; -> `&#261;`
-- &auml; -> `&auml;`
-- &AElig; -> `&AElig;`
-- &aelig; -> `&aelig;`
-- &cent; -> `&cent;`
-- &#339; -> `&#339;`
-- &#262; -> `&#262;`
-- &#263; -> `&#263;`
-- &#264; -> `&#264;`
-- &#265; -> `&#265;`
-- &#266; -> `&#266;`
-- &#267; -> `&#267;`
-- &#268; -> `&#268;`
-- &#269; -> `&#269;`
-- &#270; -> `&#270;`
-- &#271; -> `&#271;`
-- &#272; -> `&#272;`
-- &#273; -> `&#273;`
-- &ETH; -> `&ETH;`
-- &Eacute; -> `&Eacute;`
 - &eacute; -> `&eacute;`
-- &Ecirc; -> `&Ecirc;`
-- &ecirc; -> `&ecirc;`
-- &Egrave; -> `&Egrave;`
-- &egrave; -> `&egrave;`
-- &Euml; -> `&Euml;`
-- &euml; -> `&euml;`
-- &#274; -> `&#274;`
-- &#275; -> `&#275;`
-- &#276; -> `&#276;`
-- &#277; -> `&#277;`
-- &#278; -> `&#278;`
-- &#279; -> `&#279;`
-- &#280; -> `&#280;`
-- &#281; -> `&#281;`
-- &#282; -> `&#282;`
-- &#283; -> `&#283;`
-- &#402; -> `&#402;`
-- &#284; -> `&#284;`
-- &#285; -> `&#285;`
-- &#286; -> `&#286;`
-- &#287; -> `&#287;`
-- &#288; -> `&#288;`
-- &#289; -> `&#289;`
-- &#290; -> `&#290;`
-- &#291; -> `&#291;`
-- &#292; -> `&#292;`
-- &#293; -> `&#293;`
-- &#294; -> `&#294;`
-- &#295; -> `&#295;`
-- &eth; -> `&eth;`
-- &Iacute; -> `&Iacute;`
 - &iacute; -> `&iacute;`
-- &Icirc; -> `&Icirc;`
-- &icirc; -> `&icirc;`
-- &Igrave; -> `&Igrave;`
-- &igrave; -> `&igrave;`
-- &Iuml; -> `&Iuml;`
-- &iuml; -> `&iuml;`
-- &#296; -> `&#296;`
-- &#297; -> `&#297;`
-- &#298; -> `&#298;`
-- &#299; -> `&#299;`
-- &#300; -> `&#300;`
-- &#301; -> `&#301;`
-- &#302; -> `&#302;`
-- &#303; -> `&#303;`
-- &#304; -> `&#304;`
-- &#305; -> `&#305;`
-- &#306; -> `&#306;`
-- &#307; -> `&#307;`
-- &#308; -> `&#308;`
-- &#309; -> `&#309;`
-- &#310; -> `&#310;`
-- &#311; -> `&#311;`
-- &#313; -> `&#313;`
-- &#314; -> `&#314;`
-- &#315; -> `&#315;`
-- &#316; -> `&#316;`
-- &#317; -> `&#317;`
-- &#318; -> `&#318;`
-- &#321; -> `&#321;`
-- &#322; -> `&#322;`
-- &#323; -> `&#323;`
-- &#324; -> `&#324;`
-- &#325; -> `&#325;`
-- &#326; -> `&#326;`
-- &#327; -> `&#327;`
-- &#328; -> `&#328;`
-- &#331; -> `&#331;`
 - &Oacute; -> `&Oacute;`
-- &oacute; -> `&oacute;`
-- &Ocirc; -> `&Ocirc;`
-- &ocirc; -> `&ocirc;`
-- &Ograve; -> `&Ograve;`
-- &ograve; -> `&ograve;`
-- &Oslash; -> `&Oslash;`
 - &oslash; -> `&oslash;`
-- &Otilde; -> `&Otilde;`
-- &otilde; -> `&otilde;`
-- &Ouml; -> `&Ouml;`
-- &ouml; -> `&ouml;`
-- &#332; -> `&#332;`
-- &#333; -> `&#333;`
-- &#334; -> `&#334;`
-- &#335; -> `&#335;`
-- &#336; -> `&#336;`
-- &#337; -> `&#337;`
-- &#338; -> `&#338;`
-- &#339; -> `&#339;`
-- &#340; -> `&#340;`
-- &#341; -> `&#341;`
-- &#342; -> `&#342;`
-- &#343; -> `&#343;`
-- &#344; -> `&#344;`
-- &#345; -> `&#345;`
-- &#346; -> `&#346;`
-- &#347; -> `&#347;`
-- &#348; -> `&#348;`
-- &#349; -> `&#349;`
-- &#350; -> `&#350;`
-- &#351; -> `&#351;`
-- &#352; -> `&#352;`
-- &#353; -> `&#353;`
-- &#354; -> `&#354;`
-- &#355; -> `&#355;`
-- &#356; -> `&#356;`
-- &#357; -> `&#357;`
-- &#358; -> `&#358;`
-- &#359; -> `&#359;`
-- &Uacute; -> `&Uacute;`
-- &uacute; -> `&uacute;`
-- &Ucirc; -> `&Ucirc;`
-- &ucirc; -> `&ucirc;`
-- &Ugrave; -> `&Ugrave;`
 - &ugrave; -> `&ugrave;`
 - &Uuml; -> `&Uuml;`
 - &uuml; -> `&uuml;`
 - &micro; -> `&micro;`
-- &#360; -> `&#360;`
-- &#361; -> `&#361;`
-- &#362; -> `&#362;`
-- &#363; -> `&#363;`
-- &#364; -> `&#364;`
-- &#365; -> `&#365;`
-- &#366; -> `&#366;`
-- &#367; -> `&#367;`
-- &#368; -> `&#368;`
-- &#369; -> `&#369;`
-- &#370; -> `&#370;`
-- &#371; -> `&#371;`
-- &#372; -> `&#372;`
-- &#373; -> `&#373;`
-- &#374; -> `&#374;`
-- &#375; -> `&#375;`
-- &#376; -> `&#376;`
-- &#377; -> `&#377;`
-- &#378; -> `&#378;`
-- &#379; -> `&#379;`
-- &#380; -> `&#380;`
-- &#381; -> `&#381;`
-- &#382; -> `&#382;`
 - &Ccedil; -> `&Ccedil;`
-- &ccedil; -> `&ccedil;`
-- &Ntilde; -> `&Ntilde;`
-- &ntilde; -> `&ntilde;`
-- &sect; -> `&sect;`
-- &reg; -> `&reg;`
-- &copy; -> `&copy;`
-- &Yacute; -> `&Yacute;`
-- &yacute; -> `&yacute;`
-- &yuml; -> `&yuml;`
-- &#376; -> `&#376;`
-- &THORN; -> `&THORN;`
-- &thorn; -> `&thorn;`
-- &szlig; -> `&szlig;`
-- &pound; -> `&pound;`
-- &yen; -> `&yen;`
-- &euro; -> `&euro;`
 - &iquest; -> `&iquest;`
 - &iexcl; -> `&iexcl;`
 - &trade; -> `&trade;`
 - &#8480; -> `&#8480;`
 
-The idea behind this extension (and the reason why it won't replace any of the other HTML entities) is that if you have a file that contains the listed characters you can replace all of these at once just by running the command. This is very useful if you are working with localizable strings, and your source contains these special characters.
+Note that it does not include replacing of `"` (`&quot;`) because of how common they are under some scenarios when dealing with localizable strings within files and source code.
 
-In a future release I intend to add an option to extend/override the character maps, and also provide an additional command to run only within a selection.
+From version 2.0 the extension supports adding your own replacements, and even overriding existing ones. To do this, you can edit the settings.json file and add an
+object with property name of `htmlentityreplacer.overrides`. For example, if you wanted to add a replacement for `"`, and also override the built-in replacement for &aacute;:
 
-## Requirements
 
-Requires a recent version of Visual Studio Code running on NodeJS 7+ (async / await support).
+```
+{
+    // other user scope vscode settings... ,
+    "htmlentityreplacer.overrides": {
+        "\"": "&quot;",
+        "á": "&#225;"
+    }
+}
+```
+This would also allow you to "disable" some replacements if this is necessary for your use case. To do this, you can simply add a replacement where the value being replaced is the same as the original. It's easier to explain with code. For example, to disable replacing `¿`:
+
+
+```
+{
+    // other user scope vscode settings... ,
+    "htmlentityreplacer.overrides": {
+        "¿": "¿"
+    }
+}
+```
+
+## Thanks
+
+Many thanks to [@developerG27](https://github.com/developerG27), [@cadukich](https://github.com/cadukich), [@pszxzsd](https://github.com/pszxzsd), and [@vgdsouza](https://github.com/vgdsouza) for their contributions.
