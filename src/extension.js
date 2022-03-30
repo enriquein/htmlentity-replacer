@@ -1,7 +1,9 @@
 const vscode = require('vscode');
 const forIn = require('lodash.forin');
 
-const charMap = {
+const overrides = vscode.workspace.getConfiguration('htmlentityreplacer').get('overrides');
+
+const charMap = Object.assign({
     'Á':'&Aacute;',
     'á':'&aacute;',
     'Â':'&Acirc;',
@@ -207,7 +209,7 @@ const charMap = {
     '°':'&deg;',
     'º':'&ordm;',
     'ª':'&ordf;'
-};
+}, overrides);
 
 // build match regex based on charmap
 let regexMap = '[';
@@ -258,7 +260,7 @@ async function replaceEntities(editor) {
             }
         }
 
-        // reset for next iteration. god damned function-level scoping in js.
+        // reset for next iteration
         found = true;
         lastFoundIndex = -1;
     }

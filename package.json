@@ -28,7 +28,17 @@
                 "command": "extension.htmlentity-replacer",
                 "title": "Replace special characters with Html entities"
             }
-        ]
+        ],
+        "configuration": {
+            "title": "HTML accented character converter",
+            "properties": {
+                "htmlentityreplacer.overrides" : {
+                    "type": "object",
+                    "default": {},
+                    "description": "Object containing a property for each source character, and the property's value is the HTML entity it will be replaced with. Changes require a reload."
+                }
+            }
+        }
     },
     "scripts": {
         "vscode:prepublish": "webpack --mode production",
