@@ -2,7 +2,7 @@
     "name": "htmlentity-replacer",
     "displayName": "HTML accented character converter",
     "description": "VSCode extension for quick replacements of accented characters into html entities.",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "publisher": "enriquein",
     "license": "SEE LICENSE IN LICENSE.md",
     "engines": {
@@ -19,14 +19,19 @@
         "html entities"
     ],
     "activationEvents": [
-        "onCommand:extension.htmlentity-replacer"
+        "onCommand:extension.htmlentity-replacer.main",
+        "onCommand:extension.htmlentity-replacer.inSelection"
     ],
     "main": "dist/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.htmlentity-replacer",
+                "command": "extension.htmlentity-replacer.main",
                 "title": "Replace special characters with Html entities"
+            },
+            {
+                "command": "extension.htmlentity-replacer.inSelection",
+                "title": "Replace special characters with Html entities for current selection"
             }
         ],
         "configuration": {

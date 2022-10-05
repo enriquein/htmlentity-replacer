@@ -217,7 +217,7 @@ forIn(charMap, (value, key) => { regexMap += key; });
 regexMap += "]";
 
 function activate(context) {
-    let disposable = vscode.commands.registerCommand('extension.htmlentity-replacer', function () {
+    let mainCommand = vscode.commands.registerCommand('extension.htmlentity-replacer.main', function () {
         let editor = vscode.window.activeTextEditor;
 
         if (!editor) {
@@ -227,7 +227,24 @@ function activate(context) {
         replaceEntities(editor);
     });
 
-    context.subscriptions.push(disposable);
+    let commandInSelection = vscode.commands.registerCommand('extension.htmlentity-replacer.inSelection', function () {
+        let editor = vscode.window.activeTextEditor;
+
+        if (!editor) {
+            return;
+        }
+
+        let selection = editor.selection;
+
+        if (selection.start.line === 0 && selection.start.character === 0 && selection.end.line === 0 && selection.end.character === 0 ) {
+            return;
+        }
+
+        replaceEntitiesInSelection(editor);
+    });
+
+    context.subscriptions.push(mainCommand);
+    context.subscriptions.push(commandInSelection);
 }
 exports.activate = activate;
 
@@ -246,6 +263,7 @@ async function replaceEntities(editor) {
 
     for (let line = 0; line < editor.document.lineCount; line++) {
         while(found) {
+            // need to re-read the line text because we potentially modified it on a previous iteration.
             let lineContents = editor.document.lineAt(line).text;
             lastFoundIndex = regexIndexOf(lineContents, regexMap, lastFoundIndex + 1);
             if (lastFoundIndex >= 0) {
@@ -253,6 +271,51 @@ async function replaceEntities(editor) {
                 await editor.edit((edit) => {
                     edit.delete(new vscode.Range(new vscode.Position(line, lastFoundIndex), new vscode.Position(line, lastFoundIndex + 1)));
                     edit.insert(new vscode.Position(line, lastFoundIndex), replaceWith);
+                });
+                found = true;
+            } else {
+                found = false;
+            }
+        }
+
+        // reset for next iteration
+        found = true;
+        lastFoundIndex = -1;
+    }
+}
+
+async function replaceEntitiesInSelection(editor) {
+    let found = true;
+    let lastFoundIndex = -1;
+
+    for (let line = editor.selection.start.line; line <= editor.selection.end.line; line++) {
+        while(found) {
+            // need to re-read the line text because we potentially modified it on a previous iteration.
+            let fullLine = editor.document.lineAt(line).text;
+            let lineContents = '';
+            let selectionOffset = 0;
+
+            if (line === editor.selection.start.line && line === editor.selection.end.line) {
+                lineContents = fullLine.substring(editor.selection.start.character, editor.selection.end.character);
+                // need to account for the characters in the line that come before the beginning of the selection.
+                selectionOffset = editor.selection.start.character;
+            } else if (line === editor.selection.start.line) {
+                lineContents = fullLine.substring(editor.selection.start.character);
+                // need to account for the characters in the line that come before the beginning of the selection.
+                selectionOffset = editor.selection.start.character;
+            } else if (line === editor.selection.end.line) {
+                // make sure we don't replace characters in the line that come after the end of the selection.
+                lineContents = fullLine.substring(0, editor.selection.end.character);
+            } else {
+                lineContents = fullLine;
+            }
+
+            lastFoundIndex = regexIndexOf(lineContents, regexMap, lastFoundIndex + 1);
+            if (lastFoundIndex >= 0) {
+                let replaceWith = charMap[lineContents[lastFoundIndex]]
+                await editor.edit((edit) => {
+                    edit.delete(new vscode.Range(new vscode.Position(line, lastFoundIndex + selectionOffset), new vscode.Position(line, lastFoundIndex + selectionOffset + 1)));
+                    edit.insert(new vscode.Position(line, lastFoundIndex + selectionOffset), replaceWith);
                 });
                 found = true;
             } else {
